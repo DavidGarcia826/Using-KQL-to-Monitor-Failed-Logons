@@ -1,4 +1,4 @@
-# Using-KQL-to-Monitor-Failed-Logons
+# Using KQL to Monitor Failed Logons
 
 ## Introduction
 
@@ -23,4 +23,19 @@ Access the ADX environment or cluster where the logs are stored. This  can be do
 ## Write a KQL query:
 
 Using the KQL syntax, you can create a query that will retrieve and filter the failed  logs. The query will be specific to your logs' structure and content.For example, if you're using Azure  Monitor Logs, you might query the securityevent | where eventid == 4625. The below query filters and  retrieves records from the "securityevent" table where the "eventid" column equals 4625.
-![Screenshot Showing Query](https://imgur.com/a/kl3irDl)
+
+![Screenshot of Query](https://i.imgur.com/KcQ1aQM.png)
+
+Execute the query: Run the KQL query against the data source within ADX. The query engine will process  the query and return the matching results.
+
+![Screenshot of Query](https://i.imgur.com/r2ch1Z4.png)
+
+Analyze the results: To understand the failed logs better, you can review the query results and explore  the various columns. You can also add filters and aggregate the data for better insight. 
+
+Results: As we can see, the eventID of 4625 shows a failed log-on activity
+
+![Screenshot of Query](https://i.imgur.com/hufRiP6.png)
+
+## Conclusion 
+
+In conclusion, this query retrieves records from the "security event" table where the "eventid" equals  4625. The specific meaning of event ID 4625 can vary depending on the context, but Windows Security  event logs typically represent a failed logon attempt. By leveraging the power of KQL, you can efficiently  search, filter, and analyze large volumes of logs to monitor and troubleshoot failed events within Azure.
